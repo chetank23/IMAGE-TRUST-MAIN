@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Fraud Detection System Design Tokens - Professional Security Theme */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap");
+
+@layer base {
+  :root {
+    /* Core Colors - Deep Security Theme */
+    --background: 222 22% 8%;
+    --foreground: 210 20% 95%;
+
+    /* Security Color Palette */
+    --cyber-blue: 199 84% 55%;
+    --cyber-blue-dark: 199 84% 35%;
+    --cyber-teal: 174 72% 56%;
+    --neural-purple: 262 70% 65%;
+    --alert-red: 0 84% 60%;
+    --warning-amber: 48 96% 64%;
+    --success-green: 142 71% 45%;
+
+    /* Surface Colors */
+    --surface-primary: 222 22% 12%;
+    --surface-secondary: 222 20% 16%;
+    --surface-elevated: 222 18% 20%;
+    --surface-glass: 222 22% 8% / 0.8;
+
+    /* Semantic Color Mappings */
+    --primary: 199 84% 55%;
+    --primary-foreground: 222 22% 8%;
+    --secondary: 222 20% 16%;
+    --secondary-foreground: 210 20% 95%;
+    --accent: 174 72% 56%;
+    --accent-foreground: 222 22% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 95%;
+    --success: 142 71% 45%;
+    --success-foreground: 210 20% 95%;
+    --warning: 48 96% 64%;
+    --warning-foreground: 222 22% 8%;
+
+    /* Card & Surface Tokens */
+    --card: 222 20% 16%;
+    --card-foreground: 210 20% 95%;
+    --popover: 222 18% 20%;
+    --popover-foreground: 210 20% 95%;
+    --muted: 222 16% 24%;
+    --muted-foreground: 210 15% 70%;
+
+    /* Input & Border */
+    --border: 222 16% 28%;
+    --input: 222 18% 20%;
+    --ring: 199 84% 55%;
+    --radius: 0.75rem;
+
+    /* Gradients & Effects */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--cyber-blue)),
+      hsl(var(--cyber-teal))
+    );
+    --gradient-neural: linear-gradient(
+      135deg,
+      hsl(var(--neural-purple)),
+      hsl(var(--cyber-blue))
+    );
+    --gradient-alert: linear-gradient(
+      135deg,
+      hsl(var(--alert-red)),
+      hsl(var(--warning-amber))
+    );
+    --gradient-surface: linear-gradient(
+      135deg,
+      hsl(var(--surface-secondary)),
+      hsl(var(--surface-elevated))
+    );
+
+    /* Glows & Shadows */
+    --glow-cyber: 0 0 40px hsl(var(--cyber-blue) / 0.3);
+    --glow-alert: 0 0 40px hsl(var(--alert-red) / 0.3);
+    --glow-success: 0 0 40px hsl(var(--success-green) / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(222 22% 4% / 0.5);
+
+    /* Animation Curves */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", "Consolas", monospace;
+  }
+}
+
+@layer components {
+  /* Fraud Detection UI Components */
+  .fraud-panel {
+    @apply bg-card border border-border rounded-lg shadow-lg;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--surface-secondary)),
+      hsl(var(--surface-elevated))
+    );
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .fraud-panel-glass {
+    @apply backdrop-blur-md border border-border/50 rounded-lg;
+    background: hsl(var(--surface-glass));
+  }
+
+  .cyber-glow {
+    box-shadow: var(--glow-cyber);
+    transition: var(--transition-smooth);
+  }
+
+  .alert-glow {
+    box-shadow: var(--glow-alert);
+  }
+
+  .success-glow {
+    box-shadow: var(--glow-success);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-neural {
+    background: var(--gradient-neural);
+  }
+
+  .gradient-alert {
+    background: var(--gradient-alert);
+  }
+
+  .scan-animation {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--cyber-blue) / 0.3),
+      transparent
+    );
+    animation: scan 2s infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .fraud-score-bar {
+    @apply relative overflow-hidden rounded-full h-2;
+    background: hsl(var(--muted));
+  }
+
+  .fraud-score-fill {
+    @apply h-full transition-all duration-1000 ease-out;
+  }
+}
+
+@layer utilities {
+  .text-cyber {
+    color: hsl(var(--cyber-blue));
+  }
+
+  .text-neural {
+    color: hsl(var(--neural-purple));
+  }
+
+  .text-alert {
+    color: hsl(var(--alert-red));
+  }
+
+  .text-success {
+    color: hsl(var(--success-green));
+  }
+
+  .text-warning {
+    color: hsl(var(--warning-amber));
+  }
+
+  .bg-surface-primary {
+    background-color: hsl(var(--surface-primary));
+  }
+
+  .bg-surface-secondary {
+    background-color: hsl(var(--surface-secondary));
+  }
+
+  .bg-surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+}
+
+/* Animations */
+@keyframes scan {
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
